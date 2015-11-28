@@ -5,6 +5,8 @@
  */
 package medico;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author 16967302-0
@@ -16,7 +18,7 @@ public class EscritorioMedico extends javax.swing.JFrame {
      */
     public EscritorioMedico() {
         initComponents();
-        this.setLocationRelativeTo(null);
+         setLocationRelativeTo(null);
         
     }
 
@@ -43,7 +45,7 @@ public class EscritorioMedico extends javax.swing.JFrame {
         panelmedico.setLayout(panelmedicoLayout);
         panelmedicoLayout.setHorizontalGroup(
             panelmedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 965, Short.MAX_VALUE)
         );
         panelmedicoLayout.setVerticalGroup(
             panelmedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,9 +93,7 @@ public class EscritorioMedico extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelmedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelmedico)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,23 +105,31 @@ public class EscritorioMedico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-      
-    }//GEN-LAST:event_jMenu1ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-     consultamedico con = new consultamedico();
-     con.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
     
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void ingresoitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoitemActionPerformed
-    IngresarPacientes ingreso = new IngresarPacientes();
-    ingreso.setVisible(true);
+    IngresarPaciente ingreso = new IngresarPaciente();
+    panelmedico.add(ingreso);
+    Dimension desktopSize = panelmedico.getSize();
+    Dimension FrameSize = ingreso.getSize();
+    ingreso.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+    ingreso.show();
     }//GEN-LAST:event_ingresoitemActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    ConsultaPacientes con = new ConsultaPacientes();
+    panelmedico.add(con);
+    Dimension desktopSize = panelmedico.getSize();
+    Dimension FrameSize = con.getSize();
+    con.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+    con.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
